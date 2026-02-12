@@ -20,13 +20,17 @@
   "devDependencies": {
     "concurrently": "^9.0.0"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=production node server.js",
+    "start:client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server.js",
-    "dev": "concurrently \"npm start\" \"npm run server\""
+    "dev": "concurrently \"npm run start:client\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
